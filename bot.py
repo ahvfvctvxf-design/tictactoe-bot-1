@@ -456,4 +456,24 @@ async def handle_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("leaderboard", lea
+    app.add_handler(CommandHandler("leaderboard", leaderboard))
+    app.add_handler(CommandHandler("cancel", cancel))
+    app.add_handler(CommandHandler("play", play_ttt))
+    app.add_handler(CommandHandler("rps", play_rps))
+    app.add_handler(CommandHandler("hokm", play_hokm))
+    
+    app.add_handler(CallbackQueryHandler(handle_ttt_move, pattern=r"^move_\d$"))
+    app.add_handler(CallbackQueryHandler(handle_rps_choice, pattern=r"^rps_"))
+    app.add_handler(CallbackQueryHandler(handle_hokm_suit, pattern=r"^hokm_suit_"))
+    app.add_handler(CallbackQueryHandler(handle_hokm_play, pattern=r"^hokm_play_"))
+    
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_chat))
+
+    logger.info("ربات کامل با حکم روشن شد...")
+    app.run_polling()
+    
+if __name__ == "__main__":
+    main()
+
+if __name__ == "__main__":
+    main()
