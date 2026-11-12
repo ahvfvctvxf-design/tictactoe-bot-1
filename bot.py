@@ -14,7 +14,7 @@ from telegram.ext import (
 )
 
 # ---------- تنظیمات ----------
-BOT_TOKEN = "9183201024:AAGD2YnKQBz4CbDnbKI1yjDqbn8n-ITsi6Q"  # توکن خودت رو اینجا بذار
+BOT_TOKEN = "9183201024:AAGD2YnKQBz4CbDnbKIqbn8n-ITsi6Q"  # توکن خودت رو اینجا بذار
 
 # ---------- دیتابیس ----------
 def init_db():
